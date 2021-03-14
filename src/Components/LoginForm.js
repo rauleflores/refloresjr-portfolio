@@ -47,7 +47,7 @@ const LoginForm = () => {
           id="email"
           name="email"
           label="E-mail"
-          // variant="outlined"
+          variant="outlined"
           value={formik.values.email}
           onChange={formik.handleChange}
           error={formik.touched.email && Boolean(formik.errors.email)}

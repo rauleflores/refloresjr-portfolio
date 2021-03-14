@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { Button, TextField, Card } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import useStyles from "../Styles/useStyles";
-import signupValidationSchema from "../Schemas/SignupSchema";
+import signupValidationSchema from "../Schemas/SignupFormSchema";
 
 const SignUp = () => {
   const classes = useStyles();

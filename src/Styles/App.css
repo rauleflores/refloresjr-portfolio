@@ -1,4 +1,4 @@
-.App {
+.FrontPage {
   text-align: center;
   background-color: #b0f2fc;
   min-height: 100vh;
@@ -9,15 +9,15 @@
   font-size: 62.5%;
   color: white;
 }
-.App a {
+.FrontPage a {
   color: blue;
 }
-.App a:hover {
+.FrontPage a:hover {
   color: dodgerblue;
 }
-.left-side {
+.FrontPage .left-side {
   width: 64%;
 }
-.right-side {
+.FrontPage .right-side {
   width: 35%;
 }

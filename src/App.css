@@ -1,13 +1,23 @@
 .App {
   text-align: center;
-}
-.App-header {
-  background-color: #282c34;
+  background-color: #b0f2fc;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  font-size: 62.5%;
   color: white;
+}
+.App a {
+  color: blue;
+}
+.App a:hover {
+  color: dodgerblue;
+}
+/* .left-side {
+  width: 49%;
+} */
+.right-side {
+  width: 35%;
 }

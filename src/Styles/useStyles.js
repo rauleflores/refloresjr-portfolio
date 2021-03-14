@@ -26,21 +26,18 @@ const useStyles = makeStyles({
       marginBottom: "20px",
     },
   },
-  login_cta: {
-    fontSize: "1rem",
-  },
-  signup_cta: {
-    fontSize: "1rem",
-  },
-  signup_text: {
+  card_text: {
     fontSize: "1rem",
     borderBottom: "1px solid black",
     marginBottom: "10px",
   },
-  signup_h3: {
+  card_h3: {
     fontSize: "2rem",
     color: "#b0917b",
     textDecoration: "underline",
+  },
+  card_cta: {
+    fontSize: "1rem",
   },
 });
 

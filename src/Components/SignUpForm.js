@@ -43,8 +43,8 @@ const SignUp = () => {
   return (
     <Card className={classes.card}>
       <form onSubmit={formik.handleSubmit}>
-        <div className={classes.signup_text}>
-          <h3 className={classes.signup_h3}>Sign Up</h3>
+        <div className={classes.card_text}>
+          <h3 className={classes.card_h3}>Sign Up</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -131,7 +131,7 @@ const SignUp = () => {
           Submit
         </Button>
       </form>
-      <div className={classes.login_cta}>
+      <div className={classes.card_cta}>
         <span>
           Already a member?
           <br />

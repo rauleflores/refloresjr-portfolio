@@ -1,8 +1,8 @@
-import "./App.css";
-import { Route, Switch } from "react-router-dom";
-import LoginForm from "./Components/LoginForm";
+import "./Styles/App.css";
 import Splash from "./Components/Splash";
 import SignUp from "./Components/SignUpForm";
+import LoginForm from "./Components/LoginForm";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (

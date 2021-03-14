@@ -1,6 +1,11 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
+  Button: {
+    "&:hover": {
+      backgroundColor: "red",
+    },
+  },
   card: {
     display: "flex",
     flexDirection: "column",
@@ -15,25 +20,27 @@ const useStyles = makeStyles({
     boxShadow: "1px 3px 8px 1px, -1px 2px 10px 2px",
   },
   textField: {
+    margin: "10px 0px",
+    borderRadius: "4px",
     "&:last-of-type": {
       marginBottom: "20px",
     },
-    margin: "10px 0px",
-    borderRadius: "4px",
   },
   login_cta: {
-    fontSize: "1.1rem",
+    fontSize: "1rem",
   },
   signup_cta: {
-    fontSize: "1.1rem",
+    fontSize: "1rem",
   },
   signup_text: {
     fontSize: "1rem",
     borderBottom: "1px solid black",
     marginBottom: "10px",
   },
-  h3: {
+  signup_h3: {
     fontSize: "2rem",
+    color: "#b0917b",
+    textDecoration: "underline",
   },
 });
 

@@ -2,8 +2,8 @@ import React from "react";
 import { useFormik } from "formik";
 import { Button, TextField, Card } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useStyles from "../useStyles";
-import signupValidationSchema from "../Schemas/LoginSchema";
+import useStyles from "../Styles/useStyles";
+import signupValidationSchema from "../Schemas/SignupSchema";
 
 const SignUp = () => {
   const classes = useStyles();
@@ -22,6 +22,23 @@ const SignUp = () => {
       formik.resetForm();
     },
   });
+
+  const buttonDisabled = ({
+    firstName,
+    lastName,
+    email,
+    password,
+    password_check,
+  }) => {
+    const valueCheck =
+      firstName.length > 0 &&
+      lastName.length > 0 &&
+      email.length > 0 &&
+      password.length > 0 &&
+      password_check.length > 0;
+    console.log(valueCheck);
+    return valueCheck;
+  };
 
   return (
     <Card className={classes.card}>
@@ -103,7 +120,14 @@ const SignUp = () => {
             formik.touched.password_check && formik.errors.password_check
           }
         />
-        <Button color="primary" variant="contained" fullWidth type="submit">
+        <Button
+          className={classes.Button}
+          color="primary"
+          variant="contained"
+          fullWidth
+          type="submit"
+          disabled={buttonDisabled(formik.values) ? false : true}
+        >
           Submit
         </Button>
       </form>

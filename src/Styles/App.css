@@ -15,9 +15,9 @@
 .App a:hover {
   color: dodgerblue;
 }
-/* .left-side {
-  width: 49%;
-} */
+.left-side {
+  width: 64%;
+}
 .right-side {
   width: 35%;
 }

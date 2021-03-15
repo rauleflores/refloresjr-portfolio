@@ -1,16 +1,18 @@
 import "./Styles/App.css";
 import NoMatch from "./util/NoMatch";
+import NavBar from "./Components/NavBar";
 import Splash from "./Components/Splash";
 import SignUp from "./Components/SignUpForm";
 import Dashboard from "./Components/Dashboard";
 import LoginForm from "./Components/LoginForm";
 import { Route, Switch } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <>
+      <NavBar />
       <Switch>
-        <Route exact path="/">
+        <Route path="/">
           <div className="FrontPage">
             <div className="left-side">
               <Splash />

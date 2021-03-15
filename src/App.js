@@ -1,5 +1,5 @@
 import "./Styles/App.css";
-import NoMatch from "./NoMatch";
+import NoMatch from "./util/NoMatch";
 import Splash from "./Components/Splash";
 import SignUp from "./Components/SignUpForm";
 import Dashboard from "./Components/Dashboard";

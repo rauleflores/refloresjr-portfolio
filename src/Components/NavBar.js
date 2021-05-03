@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   AppBar,
   Menu,
@@ -12,6 +13,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import useStyles from "../Styles/useStyles";
 
 const NavBar = (props) => {
+  const history = useHistory();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -22,6 +24,10 @@ const NavBar = (props) => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    history.push("/home/login");
   };
 
   return (
@@ -60,6 +66,7 @@ const NavBar = (props) => {
             >
               <MenuItem onClick={handleClose}>My Profile</MenuItem>
               <MenuItem onClick={handleClose}>My Account</MenuItem>
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
           </div>
         </Toolbar>

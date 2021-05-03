@@ -11,16 +11,16 @@ function App(props) {
   return (
     <>
       <Switch>
-        <Route exact path="/">
+        <Route path="/home">
           <div className="FrontPage">
             <div className="left-side">
               <Splash />
             </div>
             <div className="right-side">
-              <Route path="/signup">
+              <Route path="/home/signup">
                 <SignUp />
               </Route>
-              <Route path="/login">
+              <Route path="/home/login">
                 <LoginForm />
               </Route>
             </div>

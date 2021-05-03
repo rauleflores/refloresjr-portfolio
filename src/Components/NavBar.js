@@ -6,7 +6,6 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  makeStyles,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -26,18 +25,18 @@ const NavBar = (props) => {
   };
 
   return (
-    <div className={classes.Navigation.root}>
+    <div className={classes.Navigation}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
             edge="start"
-            className={classes.Navigation.menuButton}
+            className="menuButton"
             color="inherit"
             aria-label="menu"
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.Navigation.title}>
+          <Typography variant="h6" className="title">
             Raul E. Flores Jr
           </Typography>
           <div>

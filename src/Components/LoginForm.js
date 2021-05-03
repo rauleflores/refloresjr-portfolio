@@ -1,11 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Button, Card, TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import useStyles from "../Styles/useStyles";
 import loginValidationSchema from "../Schemas/LoginFormSchemea";
 
 const LoginForm = () => {
+  const history = useHistory();
   const classes = useStyles();
 
   const formik = useFormik({
@@ -16,7 +17,8 @@ const LoginForm = () => {
     validationSchema: loginValidationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
+      history.push("/dashboard");
+      // formik.resetForm();
     },
   });
 
@@ -27,10 +29,10 @@ const LoginForm = () => {
   };
 
   return (
-    <Card className={classes.Card.card}>
+    <Card className={classes.Card}>
       <form onSubmit={formik.handleSubmit}>
-        <div className={classes.Card.text}>
-          <h3 className={classes.Card.h3}>Login</h3>
+        <div className="text">
+          <h3 className="h3">Login</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -42,7 +44,7 @@ const LoginForm = () => {
           </p>
         </div>
         <TextField
-          className={classes.Card.textField}
+          className="textField"
           fullWidth
           id="email"
           name="email"
@@ -54,7 +56,7 @@ const LoginForm = () => {
           helperText={formik.touched.email && formik.errors.email}
         />
         <TextField
-          className={classes.Card.textField}
+          className="textField"
           fullWidth
           id="password"
           name="password"
@@ -67,7 +69,7 @@ const LoginForm = () => {
         />
 
         <Button
-          className={classes.Card.Button}
+          className="button"
           color="primary"
           variant="contained"
           fullWidth
@@ -77,11 +79,11 @@ const LoginForm = () => {
           Submit
         </Button>
       </form>
-      <div className={classes.Card.cta}>
+      <div className="cta">
         <span>
           Need an account?
           <br />
-          <Link to="signup-page">Sign up</Link>
+          <Link to="signup">Sign up</Link>
         </span>
       </div>
     </Card>

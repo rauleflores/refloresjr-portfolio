@@ -1,11 +1,12 @@
 import React from "react";
 import { useFormik } from "formik";
 import { Button, TextField, Card } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import useStyles from "../Styles/useStyles";
 import signupValidationSchema from "../Schemas/SignupFormSchema";
 
 const SignUp = () => {
+  const history = useHistory();
   const classes = useStyles();
 
   const formik = useFormik({
@@ -19,7 +20,8 @@ const SignUp = () => {
     validationSchema: signupValidationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
+      history.push("/dashboard");
+      // formik.resetForm();
     },
   });
 
@@ -41,10 +43,10 @@ const SignUp = () => {
   };
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.Card}>
       <form onSubmit={formik.handleSubmit}>
-        <div className={classes.card_text}>
-          <h3 className={classes.card_h3}>Sign Up</h3>
+        <div className="text">
+          <h3 className="h3">Sign Up</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -56,7 +58,7 @@ const SignUp = () => {
           </p>
         </div>
         <TextField
-          className={classes.textField}
+          className="textField"
           fullWidth
           id="firstName"
           name="firstName"
@@ -68,7 +70,7 @@ const SignUp = () => {
           helperText={formik.touched.firstName && formik.errors.firstName}
         />
         <TextField
-          className={classes.textField}
+          className="textField"
           fullWidth
           id="lastName"
           name="lastName"
@@ -80,7 +82,7 @@ const SignUp = () => {
           helperText={formik.touched.lastName && formik.errors.lastName}
         />
         <TextField
-          className={classes.textField}
+          className="textField"
           fullWidth
           id="email"
           name="email"
@@ -92,7 +94,7 @@ const SignUp = () => {
           helperText={formik.touched.email && formik.errors.email}
         />
         <TextField
-          className={classes.textField}
+          className="textField"
           fullWidth
           id="password"
           name="password"
@@ -104,7 +106,7 @@ const SignUp = () => {
           helperText={formik.touched.password && formik.errors.password}
         />
         <TextField
-          className={classes.textField}
+          className="textField"
           fullWidth
           id="password_check"
           name="password_check"
@@ -121,7 +123,7 @@ const SignUp = () => {
           }
         />
         <Button
-          className={classes.Button}
+          className="button"
           color="primary"
           variant="contained"
           fullWidth
@@ -131,11 +133,11 @@ const SignUp = () => {
           Submit
         </Button>
       </form>
-      <div className={classes.card_cta}>
+      <div className="cta">
         <span>
           Already have an account?
           <br />
-          <Link to="login-page">Login</Link>
+          <Link to="login">Login</Link>
         </span>
       </div>
     </Card>

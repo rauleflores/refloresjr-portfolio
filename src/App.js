@@ -17,18 +17,16 @@ function App(props) {
               <Splash />
             </div>
             <div className="right-side">
-              <Switch>
-                <Route path="/signup-page">
-                  <SignUp />
-                </Route>
-                <Route path="/login-page">
-                  <LoginForm />
-                </Route>
-              </Switch>
+              <Route path="/signup">
+                <SignUp />
+              </Route>
+              <Route path="/login">
+                <LoginForm />
+              </Route>
             </div>
           </div>
         </Route>
-        <Route path="/dashboard">
+        <Route exact path="/dashboard">
           <NavBar />
           <Dashboard />
         </Route>

@@ -10,9 +10,8 @@ import { Route, Switch } from "react-router-dom";
 function App(props) {
   return (
     <>
-      <NavBar />
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <div className="FrontPage">
             <div className="left-side">
               <Splash />
@@ -30,6 +29,7 @@ function App(props) {
           </div>
         </Route>
         <Route path="/dashboard">
+          <NavBar />
           <Dashboard />
         </Route>
         <Route path="*">

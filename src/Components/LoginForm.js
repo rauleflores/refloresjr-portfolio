@@ -27,10 +27,10 @@ const LoginForm = () => {
   };
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.Card.card}>
       <form onSubmit={formik.handleSubmit}>
-        <div className={classes.card_text}>
-          <h3 className={classes.card_h3}>Login</h3>
+        <div className={classes.Card.text}>
+          <h3 className={classes.Card.h3}>Login</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -42,7 +42,7 @@ const LoginForm = () => {
           </p>
         </div>
         <TextField
-          className={classes.textField}
+          className={classes.Card.textField}
           fullWidth
           id="email"
           name="email"
@@ -54,7 +54,7 @@ const LoginForm = () => {
           helperText={formik.touched.email && formik.errors.email}
         />
         <TextField
-          className={classes.textField}
+          className={classes.Card.textField}
           fullWidth
           id="password"
           name="password"
@@ -67,7 +67,7 @@ const LoginForm = () => {
         />
 
         <Button
-          className={classes.Button}
+          className={classes.Card.Button}
           color="primary"
           variant="contained"
           fullWidth
@@ -77,7 +77,7 @@ const LoginForm = () => {
           Submit
         </Button>
       </form>
-      <div className={classes.card_cta}>
+      <div className={classes.Card.cta}>
         <span>
           Need an account?
           <br />

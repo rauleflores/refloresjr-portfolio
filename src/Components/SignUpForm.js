@@ -133,7 +133,7 @@ const SignUp = () => {
       </form>
       <div className={classes.card_cta}>
         <span>
-          Already a member?
+          Already have an account?
           <br />
           <Link to="login-page">Login</Link>
         </span>

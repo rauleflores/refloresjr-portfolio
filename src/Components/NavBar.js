@@ -10,18 +10,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-
-const useStyles = makeStyles((theme) => ({
-  //   root: {
-  //     flexGrow: 1,
-  //   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+import useStyles from "../Styles/useStyles";
 
 const NavBar = (props) => {
   const classes = useStyles();
@@ -37,18 +26,18 @@ const NavBar = (props) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.Navigation.root}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            className={classes.Navigation.menuButton}
             color="inherit"
             aria-label="menu"
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.Navigation.title}>
             Raul E. Flores Jr
           </Typography>
           <div>

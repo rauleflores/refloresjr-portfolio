@@ -1,9 +1,19 @@
 import React from "react";
 import { useFormik } from "formik";
-import { Button, Card, TextField } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  InputLabel,
+  TextField,
+  FormControl,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
+} from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import useStyles from "../Styles/useStyles";
 import loginValidationSchema from "../Schemas/LoginFormSchemea";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -13,6 +23,7 @@ const LoginForm = () => {
     initialValues: {
       email: "",
       password: "",
+      showPassword: "password",
     },
     validationSchema: loginValidationSchema,
     onSubmit: (values) => {
@@ -21,6 +32,10 @@ const LoginForm = () => {
       // formik.resetForm();
     },
   });
+
+  // const handleClick = () => {
+  //   formik.values.showPassword = !formik.values.showPassword;
+  // };
 
   const buttonDisabled = ({ email, password }) => {
     const check = email.length > 0 && password.length > 0;
@@ -55,6 +70,31 @@ const LoginForm = () => {
           error={formik.touched.email && Boolean(formik.errors.email)}
           helperText={formik.touched.email && formik.errors.email}
         />
+        {/* <FormControl fullWidth className="textField" variant="outlined">
+          <InputLabel htmlFor="password">Password</InputLabel>
+          <OutlinedInput
+            id="password"
+            type={formik.values.showPassword ? "text" : "password"}
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={() => !formik.values.showPassword}
+                  onMouseDown={(e) => e.preventDefault()}
+                  edge="end"
+                >
+                  {formik.values.showPassword ? (
+                    <Visibility />
+                  ) : (
+                    <VisibilityOff />
+                  )}
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl> */}
         <TextField
           className="textField"
           fullWidth

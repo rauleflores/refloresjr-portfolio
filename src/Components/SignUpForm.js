@@ -1,6 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
-import { Button, TextField, Card } from "@material-ui/core";
+import {
+  Button,
+  TextField,
+  Card,
+  InputAdornment,
+  IconButton,
+} from "@material-ui/core";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { useHistory, Link } from "react-router-dom";
 import useStyles from "../Styles/useStyles";
 import signupValidationSchema from "../Schemas/SignupFormSchema";
@@ -16,6 +23,8 @@ const SignUp = () => {
       email: "",
       password: "",
       password_check: "",
+      showPassword: false,
+      showPasswordCheck: false,
     },
     validationSchema: signupValidationSchema,
     onSubmit: (values) => {
@@ -24,6 +33,55 @@ const SignUp = () => {
       // formik.resetForm();
     },
   });
+
+  const passwordInputProps = {
+    endAdornment: (
+      <InputAdornment position="end">
+        <IconButton
+          aria-label="toggle password visibility"
+          onClick={() =>
+            formik.setFieldValue(
+              "showPassword",
+              !formik.values.showPassword,
+              false
+            )
+          }
+          onMouseDown={(e) => e.preventDefault()}
+          edge="end"
+        >
+          {formik.values.showPassword ? (
+            <Visibility color="primary" />
+          ) : (
+            <VisibilityOff color="disabled" />
+          )}
+        </IconButton>
+      </InputAdornment>
+    ),
+  };
+  const passwordCheckInputProps = {
+    endAdornment: (
+      <InputAdornment position="end">
+        <IconButton
+          aria-label="toggle password visibility"
+          onClick={() =>
+            formik.setFieldValue(
+              "showPasswordCheck",
+              !formik.values.showPasswordCheck,
+              false
+            )
+          }
+          onMouseDown={(e) => e.preventDefault()}
+          edge="end"
+        >
+          {formik.values.showPasswordCheck ? (
+            <Visibility color="primary" />
+          ) : (
+            <VisibilityOff color="disabled" />
+          )}
+        </IconButton>
+      </InputAdornment>
+    ),
+  };
 
   const buttonDisabled = ({
     firstName,
@@ -104,6 +162,8 @@ const SignUp = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
+          type={formik.values.showPassword ? "text" : "password"}
+          InputProps={passwordInputProps}
         />
         <TextField
           className="textField"
@@ -121,6 +181,8 @@ const SignUp = () => {
           helperText={
             formik.touched.password_check && formik.errors.password_check
           }
+          type={formik.values.showPasswordCheck ? "text" : "password"}
+          InputProps={passwordCheckInputProps}
         />
         <Button
           className="button"

@@ -3,17 +3,14 @@ import { useFormik } from "formik";
 import {
   Button,
   Card,
-  InputLabel,
   TextField,
-  FormControl,
-  OutlinedInput,
   InputAdornment,
   IconButton,
 } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 import useStyles from "../Styles/useStyles";
 import loginValidationSchema from "../Schemas/LoginFormSchemea";
-import { Visibility, VisibilityOff } from "@material-ui/icons";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -23,7 +20,7 @@ const LoginForm = () => {
     initialValues: {
       email: "",
       password: "",
-      showPassword: "password",
+      showPassword: false,
     },
     validationSchema: loginValidationSchema,
     onSubmit: (values) => {
@@ -33,9 +30,30 @@ const LoginForm = () => {
     },
   });
 
-  // const handleClick = () => {
-  //   formik.values.showPassword = !formik.values.showPassword;
-  // };
+  const passwordInputProps = {
+    endAdornment: (
+      <InputAdornment position="end">
+        <IconButton
+          aria-label="toggle password visibility"
+          onClick={() =>
+            formik.setFieldValue(
+              "showPassword",
+              !formik.values.showPassword,
+              false
+            )
+          }
+          onMouseDown={(e) => e.preventDefault()}
+          edge="end"
+        >
+          {formik.values.showPassword ? (
+            <Visibility color="primary" />
+          ) : (
+            <VisibilityOff color="disabled" />
+          )}
+        </IconButton>
+      </InputAdornment>
+    ),
+  };
 
   const buttonDisabled = ({ email, password }) => {
     const check = email.length > 0 && password.length > 0;
@@ -70,31 +88,6 @@ const LoginForm = () => {
           error={formik.touched.email && Boolean(formik.errors.email)}
           helperText={formik.touched.email && formik.errors.email}
         />
-        {/* <FormControl fullWidth className="textField" variant="outlined">
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <OutlinedInput
-            id="password"
-            type={formik.values.showPassword ? "text" : "password"}
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={() => !formik.values.showPassword}
-                  onMouseDown={(e) => e.preventDefault()}
-                  edge="end"
-                >
-                  {formik.values.showPassword ? (
-                    <Visibility />
-                  ) : (
-                    <VisibilityOff />
-                  )}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl> */}
         <TextField
           className="textField"
           fullWidth
@@ -106,6 +99,8 @@ const LoginForm = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
+          type={formik.values.showPassword ? "text" : "password"}
+          InputProps={passwordInputProps}
         />
 
         <Button

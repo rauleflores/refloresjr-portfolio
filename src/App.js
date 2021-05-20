@@ -5,11 +5,12 @@ import Splash from "./Components/Splash";
 import SignUp from "./Components/SignUpForm";
 import Dashboard from "./Components/Dashboard";
 import LoginForm from "./Components/LoginForm";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 function App(props) {
   return (
     <>
+      <Redirect exact from="/" to="/home/login" />
       <Switch>
         <Route path="/home">
           <div className="FrontPage">

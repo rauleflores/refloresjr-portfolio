@@ -1,14 +1,14 @@
 import React from "react";
 import { useFormik } from "formik";
 import {
+  Card,
   Button,
   TextField,
-  Card,
   InputAdornment,
   IconButton,
 } from "@material-ui/core";
+import { Link, useHistory } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
-import { useHistory, Link } from "react-router-dom";
 import useStyles from "../Styles/useStyles";
 import signupValidationSchema from "../Schemas/SignupFormSchema";
 
@@ -105,7 +105,7 @@ const SignUp = () => {
       <form onSubmit={formik.handleSubmit}>
         <div className="text">
           <h3 className="h3">Sign Up</h3>
-          <p>
+          {/* <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -113,7 +113,7 @@ const SignUp = () => {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          </p> */}
         </div>
         <TextField
           className="textField"

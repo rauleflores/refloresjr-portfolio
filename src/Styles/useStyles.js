@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "& .h3": {
       fontSize: "2rem",
-      color: "#b0917b",
+      color: "#4974a5",
       textDecoration: "underline",
     },
     "& .text": {

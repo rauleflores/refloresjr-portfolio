@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  Card: {
+  FormCard: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -47,6 +47,27 @@ const useStyles = makeStyles((theme) => ({
     "& .title": {
       flexGrow: 1,
     },
+  },
+  Splash: {
+    display: "flex",
+    flexDirection: "column",
+    margin: "10%",
+    "& .myName": {
+      fontSize: "30px",
+      color: "red",
+    },
+    "& .shortMessageDiv": {
+      height: "50px",
+      // width: "80%",
+      backgroundColor: "black",
+    },
+    "& .shortMessage": {},
+    "& .guestDiv": {},
+    "& .h3Splash": {},
+    "& .emailSplash": {},
+    "& .guestEmail": {},
+    "& .passwordSplash": {},
+    "& .guestPassword": {},
   },
 }));
 

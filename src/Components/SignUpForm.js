@@ -101,7 +101,7 @@ const SignUp = () => {
   };
 
   return (
-    <Card className={classes.Card}>
+    <Card className={classes.FormCard}>
       <form onSubmit={formik.handleSubmit}>
         <div className="text">
           <h3 className="h3">Sign Up</h3>

@@ -1,12 +1,15 @@
 import React from "react";
+import useStyles from "../Styles/useStyles";
 
 const Splash = () => {
+  const classes = useStyles();
+
   return (
-    <div>
-      <h1>Raul Flores</h1>
+    <div className={classes.Splash}>
+      <h1 className="myName">Raul Flores</h1>
       <div>
-        <div>
-          <p>
+        <div className="shortMessageDiv">
+          <p className="shortMessage">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -16,13 +19,13 @@ const Splash = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <div>
-          <h3>Guest Info</h3>
-          <p>
-            E-mail: <span></span>
+        <div className="guestDiv">
+          <h3 className="h3Spash guestInfo">Guest Info</h3>
+          <p className="emailSplash">
+            E-mail: <span className="guestEmail"></span>
           </p>
-          <p>
-            Password: <span></span>
+          <p className="passwordSplash">
+            Password: <span className="guestPassword"></span>
           </p>
         </div>
       </div>

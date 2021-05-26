@@ -10,7 +10,7 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import useStyles from "../Styles/useStyles";
-import loginValidationSchema from "../Schemas/LoginFormSchemea";
+import loginValidationSchema from "../Schemas/LoginFormSchema";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -62,7 +62,7 @@ const LoginForm = () => {
   };
 
   return (
-    <Card className={classes.Card}>
+    <Card className={classes.FormCard}>
       <form onSubmit={formik.handleSubmit}>
         <div className="text">
           <h3 className="h3">Login</h3>

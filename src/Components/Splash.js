@@ -6,7 +6,7 @@ const Splash = () => {
 
   return (
     <div className={classes.Splash}>
-      <h1 className="myName">Raul Flores</h1>
+      <h2 className="greeting">Welcome Visitor!</h2>
       <div>
         <div className="shortMessageDiv">
           <p className="shortMessage">
@@ -22,10 +22,10 @@ const Splash = () => {
         <div className="guestDiv">
           <h3 className="h3Spash guestInfo">Guest Info</h3>
           <p className="emailSplash">
-            E-mail: <span className="guestEmail"></span>
+            E-mail: <span className="guestEmail">guest@test.com</span>
           </p>
           <p className="passwordSplash">
-            Password: <span className="guestPassword"></span>
+            Password: <span className="guestPassword">01Test01</span>
           </p>
         </div>
       </div>

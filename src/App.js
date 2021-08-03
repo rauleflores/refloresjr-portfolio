@@ -10,9 +10,10 @@ import { Redirect, Route, Switch } from "react-router-dom";
 function App(props) {
   return (
     <>
-      <Redirect exact from="/" to="/home/login" />
+      {/* <Redirect exact from="/" to="/home/login" /> */}
+      <Redirect exact from="/" to="/dashboard" />
       <Switch>
-        <Route path="/home">
+        {/* <Route path="/home">
           <div className="FrontPage">
             <div className="left-side">
               <Splash />
@@ -26,7 +27,7 @@ function App(props) {
               </Route>
             </div>
           </div>
-        </Route>
+        </Route> */}
         <Route exact path="/dashboard">
           <NavBar />
           <Dashboard />

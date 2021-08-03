@@ -52,9 +52,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     margin: "10%",
-    "& .myName": {
+    "& .greeting": {
       fontSize: "30px",
-      color: "red",
+      color: " #fcbab0",
+      textDecoration: "underline",
     },
     "& .shortMessageDiv": {
       height: "50px",

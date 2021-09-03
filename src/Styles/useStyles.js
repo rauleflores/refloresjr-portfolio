@@ -1,74 +1,55 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  FormCard: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-evenly",
-    height: "750px",
-    width: "500px",
-    overflowY: "auto",
-    padding: "5%",
-    borderRadius: "3%",
-    backgroundImage: "linear-gradient(#7badb0, #bcbafc)",
-    boxShadow: "1px 3px 8px 1px, -1px 2px 10px 2px",
-    "& .button": {
-      "&:hover": {
-        backgroundColor: "red",
-      },
-    },
-    "& .cta": {
-      fontSize: "1rem",
-    },
-    "& .h3": {
-      fontSize: "2rem",
-      color: "#4974a5",
-      textDecoration: "underline",
-    },
-    "& .text": {
-      fontSize: "1rem",
-      borderBottom: "1px solid black",
-      marginBottom: "10px",
-    },
-    "& .textField": {
-      margin: "10px 0px",
-      borderRadius: "4px",
-      "&:last-of-type": {
-        marginBottom: "20px",
-      },
-    },
+  App: {
+    backgroundColor: "#3F51B5",
   },
   Navigation: {
+    fontSize: "1rem",
     flexGrow: 1,
-    "& .menuButton": {
-      marginRight: theme.spacing(2),
-    },
-    "& .title": {
-      flexGrow: 1,
+    "& .toolbar": {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      "& .menuButton": {
+        "& .menuIcon": {
+          fontSize: "1.62em",
+        },
+        marginLeft: theme.spacing(1),
+      },
+      "& .title": {
+        fontSize: "2em",
+        marginRight: theme.spacing(5),
+      },
     },
   },
-  Splash: {
+  FrontPage: {
+    height: "100vh",
+    width: "auto",
     display: "flex",
-    flexDirection: "column",
-    margin: "10%",
-    "& .greeting": {
-      fontSize: "30px",
-      color: " #fcbab0",
-      textDecoration: "underline",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    fontSize: "1rem",
+    "& .fp-text-container": {
+      position: "absolute",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
-    "& .shortMessageDiv": {
-      height: "50px",
-      // width: "80%",
-      backgroundColor: "black",
+    "& .fp-h2": {
+      textAlign: "center",
+      color: "white",
+      fontSize: "6em",
     },
-    "& .shortMessage": {},
-    "& .guestDiv": {},
-    "& .h3Splash": {},
-    "& .emailSplash": {},
-    "& .guestEmail": {},
-    "& .passwordSplash": {},
-    "& .guestPassword": {},
+    "& .fp-spacer": {
+      width: "45%",
+    },
+    "& .fp-image": {
+      width: "100%",
+      height: "inherit",
+      opacity: ".5",
+    },
   },
 }));
 

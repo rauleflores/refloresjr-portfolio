@@ -1,42 +1,24 @@
-import "./Styles/App.css";
+import { Redirect, Route, Switch } from "react-router-dom";
 import NoMatch from "./util/NoMatch";
 import NavBar from "./Components/NavBar";
-import Splash from "./Components/Splash";
-import SignUp from "./Components/SignUpForm";
-import Dashboard from "./Components/Dashboard";
-import LoginForm from "./Components/LoginForm";
-import { Redirect, Route, Switch } from "react-router-dom";
+import FrontPage from "./Components/FrontPage";
+import useStyles from "./Styles/useStyles";
 
-function App(props) {
+function App() {
+  const classes = useStyles();
   return (
-    <>
-      {/* <Redirect exact from="/" to="/home/login" /> */}
-      <Redirect exact from="/" to="/dashboard" />
+    <div className={classes.App}>
+      <Redirect exact from="/" to="/home" />
       <Switch>
-        {/* <Route path="/home">
-          <div className="FrontPage">
-            <div className="left-side">
-              <Splash />
-            </div>
-            <div className="right-side">
-              <Route path="/home/signup">
-                <SignUp />
-              </Route>
-              <Route path="/home/login">
-                <LoginForm />
-              </Route>
-            </div>
-          </div>
-        </Route> */}
-        <Route exact path="/dashboard">
+        <Route exact path="/home">
           <NavBar />
-          <Dashboard />
+          <FrontPage />
         </Route>
         <Route path="*">
           <NoMatch />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 }
 

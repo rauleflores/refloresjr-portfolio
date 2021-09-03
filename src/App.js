@@ -2,6 +2,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import NoMatch from "./util/NoMatch";
 import NavBar from "./Components/NavBar";
 import FrontPage from "./Components/FrontPage";
+import AboutMe from "./Components/AboutMe";
 import useStyles from "./Styles/useStyles";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/home">
           <NavBar />
           <FrontPage />
+          <AboutMe />
         </Route>
         <Route path="*">
           <NoMatch />

@@ -7,17 +7,17 @@ const useStyles = makeStyles((theme) => ({
   Navigation: {
     fontSize: "1rem",
     flexGrow: 1,
-    "& .toolbar": {
+    "& .nav-toolbar": {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      "& .menuButton": {
-        "& .menuIcon": {
+      "& .nav-menuButton": {
+        "& .nav-menuIcon": {
           fontSize: "1.62em",
         },
         marginLeft: theme.spacing(1),
       },
-      "& .title": {
+      "& .nav-title": {
         fontSize: "2em",
         marginRight: theme.spacing(5),
       },
@@ -34,13 +34,9 @@ const useStyles = makeStyles((theme) => ({
     "& .fp-text-container": {
       position: "absolute",
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center",
-    },
-    "& .fp-h2": {
-      textAlign: "center",
-      color: "white",
-      fontSize: "6em",
+      alignItems: "flex-start",
     },
     "& .fp-spacer": {
       width: "45%",
@@ -50,6 +46,27 @@ const useStyles = makeStyles((theme) => ({
       height: "inherit",
       opacity: ".5",
     },
+    "& .fp-span-1, .fp-span-2": {
+      textAlign: "center",
+      color: "white",
+      fontSize: "6.5em",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+    },
+    "& .fp-span-1": {
+      borderRight: "none",
+    },
+    "& .fp-span-2": {
+      borderRight: "none",
+    },
+    "& .typewriter-anim": {},
+  },
+  AboutMe: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   },
 }));
 

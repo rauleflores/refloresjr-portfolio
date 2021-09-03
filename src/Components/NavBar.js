@@ -21,16 +21,16 @@ const NavBar = (props) => {
   return (
     <div className={classes.Navigation}>
       <AppBar position="static">
-        <Toolbar className="toolbar">
+        <Toolbar className="nav-toolbar">
           <IconButton
             edge="start"
-            className="menuButton"
+            className="nav-menuButton"
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon className="menuIcon" />
+            <MenuIcon className="nav-menuIcon" />
           </IconButton>
-          <Typography variant="h6" className="title">
+          <Typography variant="h6" className="nav-title">
             Raul E. Flores Jr
           </Typography>
         </Toolbar>
